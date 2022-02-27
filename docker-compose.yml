@@ -38,3 +38,9 @@ services:
     
     composer:
         image: composer:latest
+        command: ["composer", "install"]
+        depends_on:
+            - php-fpm
+        volumes:
+            - .:/app
+        restart: always
